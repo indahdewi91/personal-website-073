@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Indah Dewi_073</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5f5;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: rgba(255, 255, 255, 0.6);
+            /* transparan */
+            backdrop-filter: blur(10px);
+            /* efek blur */
+            z-index: 1000;
+        }
+
+        nav .brand {
+            font-family: "Times New Roman", serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            /* kanan-kiri bulat */
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav .menu a:hover {
+            background-color: #32cd32;
+            /* lime pastel */
+            color: white;
+        }
+
+        /* Sections */
+        section #about,
+        #project,
+        #skills,
+        #contacts {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+        }
+
+        #about {
+            background-color: #ff8ec8;
+        }
+
+        #project {
+            background-color: #150d5d;
+        }
+
+        /* Card */
+        .card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h1 {
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .btn-contact {
+            background-color: #32cd32 !important;
+            /* pastikan menimpa style lain */
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #28a428 !important;
+            /* warna lebih gelap saat hover */
+            color: white !important;
+        }
+
+        /* home */
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 60px;
+            background-color: #ffcb48;
+        }
+
+        .home-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            width: 80%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .home-left {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .home-left h1,
+        .home-left h3,
+        .home-left .follow p {
+            font-family: "Times New Roman", serif;
+        }
+
+        /* Deskripsi & lokasi pakai font default */
+        .info-p p,
+        .info-p2 p {
+            font-family: Arial, sans-serif;
+        }
+
+
+        .home-left h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .home-left h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .info-p p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .info-p2 p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .info-p,
+        .info-p2 {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .btnn {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-home1,
+        .btn-home2 {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn-home1 {
+            background-color: #32cd32;
+            color: white;
+        }
+
+        .btn-home1:hover {
+            background-color: #28a428;
+        }
+
+        .btn-home2 {
+            background-color: #555;
+            color: white;
+        }
+
+        .btn-home2:hover {
+            background-color: #333;
+        }
+
+        /* Card placeholder */
+        .home-card {
+            width: 400px;
+            height: 400px;
+            background-color: #ffffffaa;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Follow me */
+        .follow {
+            margin-top: 20px;
+        }
+
+        .follow ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .follow ul li a {
+            color: #333;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .follow ul li a:hover {
+            color: #000000;
+        }
+
+        .follow a {
+            color: #555;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .follow a:hover {
+            color: #000000;
+        }
+
+        /* Responsive */
+        @media(max-width:900px) {
+            .home-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .home-card {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        .freelance-text {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            font-family: "Times New Roman", serif;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .about-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+        }
+
+        .about-layout {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Kolom 1 */
+        .about-image img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Kolom 2 */
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-text h2 {
+            font-family: "Times New Roman", serif;
+            font-size: 2.3rem;
+        }
+
+        .about-text hr {
+            width: 60px;
+            border: 1px solid #000;
+            margin: 10px 0 20px 0;
+        }
+
+        /* Kolom 3 */
+        .about-cards {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Card pertama full */
+        .about-cards .info-card:first-child {
+            grid-column: span 2;
+        }
+
+        /* Card style */
+        .info-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: background 0.4s, color 0.4s, border-color 0.4s;
+            position: relative;
+            overflow: hidden;
+            color: #000;
+        }
+
+        .info-card i {
+            transition: color 0.4s;
+        }
+
+        /* Hover effect */
+        .info-card:hover {
+            background: #673749;
+            /* card hitam */
+            color: #fff;
+            /* text putih */
+            border-color: #fff;
+            /* border ikut putih */
+        }
+
+        .info-card:hover i {
+            color: #fff;
+            /* ikon juga putih */
+        }
+
+
+        .custom-placeholder::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            /* putih transparan */
+            font-style: italic;
+            /* opsional */
+        }
+
+        .masonry {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .masonry div {
+            break-inside: avoid;
+            margin-bottom: 20px;
+        }
+
+        .art-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .art-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <style>
+        .stars {
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: translateY(0px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+        }
+
+        .bar-bg {
+            background-color: #eee;
+            border: 2px solid #159a29;
+            border-radius: 10px;
+            height: 15px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #159a29;
+            border-radius: 10px;
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">Maw.</div>
+        <div class="menu">
+            <a href="#about">About Me</a>
+            <a href="#project">Project</a>
+            <a href="#skills">Skill</a>
+            <a style="color: #fff;" href="#footer" class="btn-contact">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Sections -->
+    <section class="home" id="home">
+        <div class="home-container">
+            <!-- Kiri: info-home -->
+            <div class="home-left">
+                <!-- Freelance text oval -->
+                <p class="freelance-text"> .Available for freelance work</p>
+
+                <!-- Nama & profesi -->
+                <h1 style="font-family:'Times New Roman', serif; font-size:3.8rem; margin:10px 0 10px 0;">Hello there!
+                </h1>
+                <h3 style="font-family:'Times New Roman', serif; font-size:1.3rem; margin-bottom:20px; color:#555;">
+                    Student & Creative Learner</h3>
+
+                <!-- Deskripsi -->
+                <div class="info-p" style="font-family:Arial, sans-serif;">
+                    <p>I’m a student exploring web development and design and creating simple, thoughtful digital works
+                        where structure meets creativity.
+                    </p>
+                    <p>Curiosity and experimenting are the way I learn.</p>
+                </div>
+
+                <!-- Location + Availability -->
+                <div class="info-p2" style="font-family:Arial, sans-serif; margin-top:10px;">
+                    <p><i class="fa-solid fa-location-dot"></i> Based in Semarang, Indonesia &nbsp;|&nbsp; <i
+                            class="fa-solid fa-briefcase"></i> Available Now</p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="btnn">
+                    <a href="#footer" class="btn-home1"><i class="fa-solid fa-arrow-right"></i> Hire Me</a>
+                    <a href="document/CV.pdf" target="_blank" class="btn-home2">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+
+                </div>
+                <br></br>
+                <hr color="#555">
+                </hr>
+
+                <!-- Follow me inline -->
+                <div class="follow" style="margin-top:20px; display:flex; align-items:center; gap:10px;">
+                    <p style="font-family:'Times New Roman', serif; margin:0;">Follow me:</p>
+
+                    <!-- Github -->
+                    <a href="https://github.com/indahdewi91" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.com/channels/@mavv46272" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/nur-indah-dewi-kusuma-wardani-738106240/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/nrindhdw" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Kanan: card placeholder -->
+            <div class="home-card">
+                <img src="image/IMG_4508.JPG" alt="Foto Maw"
+                    style="width:100%; height:100%; border-radius:20px; object-fit:cover;">
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="about"
+        style=" min-height:10vh; display:flex; justify-content:center; align-items:center; padding:60px 20px;">
+        <div
+            style="max-width:900px; width:100%; text-align:center; display:flex; flex-direction:column; align-items:center; gap:30px;">
+
+            <div class="about-layout">
+
+                <!-- Kolom 1: Gambar -->
+                <!-- Kolom 2: Text -->
+                <div class="about-text">
+                    <h2 class="typing-loop">Let's get to know me!</h2>
+
+                    <style>
+                        .typing-loop {
+                            font-family: 'Times New Roman', serif;
+                            font-size: 2.5rem;
+                            color: #000000;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            width: 0;
+                            animation: typingLoop 6s steps(22) infinite;
+                        }
+
+                        /* Animasi ngetik & hapus */
+                        @keyframes typingLoop {
+                            0% {
+                                width: 0;
+                            }
+
+                            25% {
+                                width: 22ch;
+                            }
+
+                            /* selesai ngetik */
+                            50% {
+                                width: 22ch;
+                            }
+
+                            /* pause */
+                            75% {
+                                width: 0;
+                            }
+
+                            /* hapus */
+                            100% {
+                                width: 0;
+                            }
+
+                            /* pause sebelum loop */
+                        }
+
+                        /* Kursor berkedip */
+                        .typing-loop::after {
+                            content: '';
+                            border-right: 3px solid #555;
+                            animation: blink 0.75s step-end infinite;
+                        }
+
+                        @keyframes blink {
+                            50% {
+                                border-color: transparent;
+                            }
+                        }
+                    </style>
+
+
+
+                    <hr>
+                    <p>
+                        I'm a student passionate about front-end development and logistics. I enjoy building web
+                        experiences using HTML, CSS, and JavaScript while exploring UI/UX design and digital art.I dive
+                        into projects that challenge me, whether coding interactive websites, designing interfaces in
+                        Figma, or experimenting with
+                        digital illustrations. Outside coding, I love reading, exploring literature, and continuously
+                        learning.
+                    </p>
+                </div>
+
+                <!-- Kolom 3: Cards -->
+                <div class="about-cards">
+                    <div class="info-card">
+                        <h3><i class="fa-solid fa-code"></i> Skills</h3>
+                        <p>Basic HTML, CSS, JavaScript; Office, Figma</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fa-solid fa-folder-open"></i> Projects</h3>
+                        <p>Simple Website, UI/UX Design, & Business Plan</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fa-solid fa-heart"></i> Interests</h3>
+                        <p>Literature, Tech, Creative Field</p>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+
+
+
+
+
+    <section id="project"
+        style="min-height:100vh; display:flex; justify-content:center; align-items:center; padding:60px 20px; position:relative; overflow:hidden; background:#1a1a2e;">
+
+        <!-- Background Stars -->
+        <canvas id="stars" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+
+        <div
+            style="max-width:900px; width:100%; text-align:center; display:flex; flex-direction:column; align-items:center; gap:30px; position:relative; z-index:1;">
+
+            <!-- Judul Section -->
+            <div style="text-align:center;">
+                <h2 style="color: #ffffff; font-family:'Times New Roman', serif; font-size:2.5rem; margin-bottom:10px;">
+                    Projects & Artworks</h2>
+                <hr style="border:1px solid white; width:60px; margin:0 auto 20px auto;">
+                <p style="font-family:Arial, sans-serif; color:white; line-height:1.6; max-width:600px; margin:0 auto;">
+                    A showcase of my latelest projects demonstrating expertise in web development, creative coding,
+                    UI/UX, and digital art.
+                </p>
+            </div>
+
+            <!-- Cards Container -->
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; width:100%;">
+                <!-- Project Card 1 -->
+                <div
+                    style="flex:1 1 250px; background-color:white; padding:20px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); text-align:center;">
+                    <h3 style="margin-bottom:10px;"><i class="fa-solid fa-folder-open" style="color:#EE6983;"></i>
+                        Anti-Bullying App</h3>
+                    <p>A school project focused on creating a mobile application to report bullying as UI/UX designer.
+                    </p>
+                </div>
+                <!-- Project Card 2 -->
+                <div
+                    style="flex:1 1 250px; background-color:white; padding:20px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); text-align:center;">
+                    <h3 style="margin-bottom:10px;"><i class="fa-solid fa-paintbrush" style="color:#EE6983;"></i>
+                        Digital Art & UI/UX</h3>
+                    <p>Created digital illustrations and UI/UX prototypes using Figma and ibis Paint, blending
+                        aesthetics with functionality.</p>
+                </div>
+                <!-- Project Card 3 -->
+                <div
+                    style="flex:1 1 250px; background-color:white; padding:20px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); text-align:center;">
+                    <h3 style="margin-bottom:10px;"><i class="fa-solid fa-laptop-code" style="color:#EE6983;"></i>
+                        Business Plan</h3>
+                    <p>Designed a business plan for school, integrating project management, marketing strategy, and
+                        mobile prototype demonstration.</p>
+                </div>
+            </div>
+
+            <!-- Masonry Artworks -->
+            <div class="masonry">
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/art1.png" alt="Art 1" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Frame 2.png" alt="Art 2" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Summer (1).jpg" alt="Art 3" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/dashboard.png" alt="Art 4" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled223.jpg" alt="Art 5" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled211.jpg" alt="Art 6" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled252.jpg" alt="Art 7" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled409.jpg" alt="Art 8" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled339.jpg" alt="Art 9" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled347.jpg" alt="Art 10" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled391.jpg" alt="Art 11" style="width:100%; display:block;"></div>
+                <div class="art-item"
+                    style="background:white; border-radius:15px; overflow:hidden; border:2px solid #000;"><img
+                        src="image/Untitled394.jpg" alt="Art 12" style="width:100%; display:block;"></div>
+            </div>
+
+        </div>
+
+        <!-- Script animasi bintang -->
+        <script>
+            const canvas = document.getElementById("stars");
+            const ctx = canvas.getContext("2d");
+            let w, h;
+            let stars = [];
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+                stars = [];
+                for (let i = 0; i < 150; i++) { // jumlah bintang
+                    stars.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 2, d: Math.random() });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                for (let i = 0; i < stars.length; i++) {
+                    let s = stars[i];
+                    ctx.moveTo(s.x, s.y);
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2, true);
+                }
+                ctx.fill();
+                update();
+                requestAnimationFrame(draw);
+            }
+
+            function update() {
+                for (let i = 0; i < stars.length; i++) {
+                    let s = stars[i];
+                    s.y += 0.2 * s.d;
+                    if (s.y > h) { s.y = 0; s.x = Math.random() * w; }
+                }
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+            draw();
+
+            const items = document.querySelectorAll('.art-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('show');
+                        }, index * 150); // delay staggered
+                    } else {
+                        entry.target.classList.remove('show'); // hapus class saat keluar viewport
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            items.forEach(item => observer.observe(item));
+
+        </script>
+
+    </section>
+
+
+
+
+    <section id="skills"
+        style="min-height:100vh; display:flex; justify-content:center; align-items:center; padding:60px 20px;">
+        <div style="max-width:900px; width:100%; display:flex; flex-wrap:wrap; gap:40px;">
+
+            <!-- Judul Section -->
+            <div style="width:100%; text-align:center; margin-bottom:40px;">
+                <h2 style="font-family:'Times New Roman', serif; font-size:2.5rem; margin-bottom:10px;">Skills</h2>
+                <hr style="border:1px solid #850E35; width:60px; margin:0 auto 20px auto;">
+                <p style="font-family:Arial, sans-serif; color:#333; max-width:600px; margin:0 auto;">
+                    My technical skills and language proficiency with estimated mastery levels.
+                </p>
+            </div>
+
+            <!-- Kolom 1 -->
+            <div style="flex:1 1 45%; display:flex; flex-direction:column; gap:20px;">
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">HTML & CSS <span style="float:right;">90%</span></p>
+                    <div style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="90"
+                            style="width:0%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">JavaScript <span style="float:right;">50%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="50"
+                            style="width:50%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">Office Word <span style="float:right;">80%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="80"
+                            style="width:80%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">English<span style="float:right;">75%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="75"
+                            style="width:75%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom 2 -->
+            <div style="flex:1 1 45%; display:flex; flex-direction:column; gap:20px;">
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">Ibis Paint<span style="float:right;">85%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="85"
+                            style="width:85%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">Excel (Basic) <span style="float:right;">60%</span>
+                    </p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="60"
+                            style="width:60%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">Figma <span style="float:right;">75%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="75"
+                            style="width:75%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin:0 0 5px 0; font-weight:bold;">Deutsch <span style="float:right;">40%</span></p>
+                    <div class="bar-bg"
+                        style="background-color:#eee; border:2px solid #159a29; border-radius:10px; height:15px;">
+                        <div class="skill-bar" data-percent="40"
+                            style="width:40%; background-color:#159a29; height:100%; border-radius:10px;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const skillBars = document.querySelectorAll('.skill-bar');
+                const skillsSection = document.getElementById('skills');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            skillBars.forEach(bar => {
+                                const percent = bar.dataset.percent;
+                                bar.style.width = percent + '%';
+                            });
+                        } else {
+                            skillBars.forEach(bar => {
+                                bar.style.width = '0%';
+                            });
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(skillsSection);
+            });
+        </script>
+
+    </section>
+
+
+
+    <footer id="footer"
+        style="background-color:#159a29; color:white; font-family:Arial, sans-serif; padding:60px 20px 30px 20px;">
+        <div
+            style="max-width:1000px; width:100%; display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; align-items:stretch; margin:0 auto;">
+
+            <!-- Kolom 1: Contact Info -->
+            <div style="flex:1 1 350px; text-align:left;">
+                <h2 style="font-family:'Times New Roman', serif; margin-bottom:10px; color:white;">Contact Info</h2>
+                <hr style="border:1px solid #FFC4C4; width:50px; margin-bottom:15px;">
+                <p style="margin-bottom:8px;"><i class="fa-solid fa-location-dot"></i> Semarang, Indonesia</p>
+                <p style="margin-bottom:8px;"><i class="fa-solid fa-envelope"></i> nurindahdewi91@gmail.com</p>
+                <p style="margin-bottom:8px;"><i class="fa-solid fa-phone"></i> +62 813 2868 4326</p>
+                <p style="margin-bottom:8px;"><i class="fab fa-linkedin"></i>
+                    linkedin.com/in/nur-indah-dewi-kusuma-wardani</p>
+                <p><i class="fab fa-github"></i> github.com/indahdewi91</p>
+            </div>
+
+            <!-- Kolom 2: Contact Form -->
+            <div
+                style="flex:1 1 400px; text-align:left; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <h2 style="font-family:'Times New Roman', serif; margin-bottom:10px; color:white;">Send Me a Message
+                    </h2>
+                    <hr style="border:1px solid #FFC4C4; width:50px; margin-bottom:15px;">
+                </div>
+                <!-- Form -->
+                <form id="contactForm"
+                    style="display:flex; flex-direction:column; gap:15px; flex-grow:1; justify-content:space-between;">
+                    <input type="text" name="name" placeholder="Your Name" required
+                        style="padding:10px 5px; border:none; border-bottom:2px solid rgba(255,255,255,0.6); background-color:transparent; color:white; outline:none;"
+                        class="custom-placeholder">
+                    <input type="email" name="email" placeholder="Your Email" required
+                        style="padding:10px 5px; border:none; border-bottom:2px solid rgba(255,255,255,0.6); background-color:transparent; color:white; outline:none;"
+                        class="custom-placeholder">
+                    <textarea name="message" rows="4" placeholder="Your Message" required
+                        style="padding:10px 5px; border:none; border-bottom:2px solid rgba(255,255,255,0.6); background-color:transparent; color:white; outline:none;"
+                        class="custom-placeholder"></textarea>
+                    <button type="submit"
+                        style="padding:12px 25px; border:none; border-radius:10px; background-color:#32cd32; color:white; font-weight:bold; cursor:pointer; transition:0.3s; align-self:flex-start;">
+                        Send Message
+                    </button>
+                </form>
+
+                <!-- Popup -->
+                <!-- Popup -->
+                <div id="popupMessage" style="
+    opacity:0;
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#ffffff; /* ungu gelap */
+    color:#28a428;
+    padding:15px 25px;
+    border-radius:10px;
+    border: solid #28a428;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    z-index:9999;
+    font-weight:bold;
+    transition: opacity 0.8s ease; /* fade in/out */
+">
+                    Pesan Anda telah terkirim, terima kasih!
+                </div>
+
+                <script>
+                    const form = document.getElementById('contactForm');
+                    const popup = document.getElementById('popupMessage');
+
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        // tampilkan popup dengan fade in
+                        popup.style.opacity = 1;
+
+                        // hide popup setelah 3 detik dengan fade out
+                        setTimeout(() => {
+                            popup.style.opacity = 0;
+                        }, 3500);
+
+                        // reset form
+                        form.reset();
+                    });
+                </script>
+
+
+            </div>
+
+        </div>
+        <br></br>
+
+        <!-- Copyright -->
+        <p style="text-align:center; margin-top:30px; font-size:0.9rem;">&copy; 2025 Maw. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

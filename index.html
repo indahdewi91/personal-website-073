@@ -91,8 +91,7 @@
 
 
 
-        /* Mobile specific tweaks for ≤900px */
-        @media (max-width: 900px) {
+          @media  (max-width: 900px)and (min-height: 700px) {
 
             /* Navbar mobile: sembunyikan navbar asli, tampilkan hamburger */
             /* sembunyikan desktop nav */
@@ -106,7 +105,7 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 15px 20px;
-                background-color: #32cd32;
+                background-color: #40E0D0;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -118,7 +117,7 @@
             .mobile-menu {
                 display: flex;
                 flex-direction: column;
-                background-color: #32cd32;
+                background-color: #40E0D0;
                 position: fixed;
                 top: 60px;
                 /* sesuaikan tinggi nav */
@@ -154,6 +153,7 @@
                 /* jarak dari top nav ke konten */
                 gap: 25px;
                 /* jarak antar elemen lebih lega */
+
             }
 
 
@@ -176,13 +176,13 @@
                 font-family: "Times New Roman", serif;
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: #333;
+                color: #FF8EC8;
             }
 
             .hamburger {
                 width: 25px;
                 height: 2px;
-                background-color: #333;
+                background-color: #FF8EC8;
                 position: relative;
                 transition: all 0.3s ease;
                 cursor: pointer;
@@ -194,7 +194,7 @@
                 position: absolute;
                 width: 25px;
                 height: 2px;
-                background-color: #333;
+                background-color: #FF8EC8;
                 transition: all 0.3s ease;
             }
 
@@ -223,7 +223,7 @@
 
             .mobile-menu a {
                 text-decoration: none;
-                color: #333;
+                color: #FF8EC8;
                 font-weight: bold;
                 padding: 10px;
                 border-radius: 10px;
@@ -231,7 +231,7 @@
             }
 
             .mobile-menu a:hover {
-                background-color: #32cd32;
+                background-color: #40E0D0;
                 color: white;
             }
 
@@ -346,8 +346,8 @@
                 /* supaya bisa wrap ke baris berikut */
                 overflow: visible !important;
                 /* pastikan teks nggak tersembunyi */
-                
-                text-align: left !important ;
+
+                text-align: left !important;
             }
 
             .about-text p {
@@ -366,6 +366,14 @@
                 padding: 15px;
                 /* card lebih kecil */
                 font-size: 0.9rem;
+            }
+
+            .home {
+                min-height: 100vh;
+            }
+
+            #skills {
+                min-height: 100vh;
             }
         }
 
@@ -1321,6 +1329,7 @@ and digital illustration as complementary skills.
 </body>
 
 </html>
+
 
 
 

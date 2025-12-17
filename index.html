@@ -83,7 +83,7 @@
             background-color: #150d5d;
         }
 
-        
+
 
         /* Default: desktop */
         .mobile-nav,
@@ -93,7 +93,7 @@
 
 
 
-            /* Mobile specific tweaks for ≤900px */
+        /* Mobile specific tweaks for ≤900px */
         @media (max-width: 900px) {
 
             /* Navbar mobile: sembunyikan navbar asli, tampilkan hamburger */
@@ -156,6 +156,7 @@
                 /* jarak dari top nav ke konten */
                 gap: 25px;
                 /* jarak antar elemen lebih lega */
+                flex-direction: column;
             }
 
 
@@ -298,6 +299,13 @@
 
             }
 
+            #skills {
+                min-height: auto;
+                align-items: flex-start;
+                padding-top: 80px;
+                padding-bottom: 60px;
+            }
+
             .typing-loop {
                 animation: none !important;
                 width: auto !important;
@@ -348,8 +356,8 @@
                 /* supaya bisa wrap ke baris berikut */
                 overflow: visible !important;
                 /* pastikan teks nggak tersembunyi */
-                
-                text-align: left !important ;
+
+                text-align: left !important;
             }
 
             .about-text p {
@@ -368,6 +376,13 @@
                 padding: 15px;
                 /* card lebih kecil */
                 font-size: 0.9rem;
+            }
+
+            .home {
+                min-height: auto;
+                align-items: flex-start;
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
         }
 
@@ -718,6 +733,7 @@
             height: 15px;
             overflow: hidden;
         }
+
         html {
             scroll-behavior: smooth;
         }
@@ -798,7 +814,8 @@
 
                 <!-- Buttons -->
                 <div class="btnn">
-                    <a href="mailto:nurindahdewi91@gmail.com?subject=Freelance%20Inquiry&body=Hello%20Maw," class="btn-home1">
+                    <a href="mailto:nurindahdewi91@gmail.com?subject=Freelance%20Inquiry&body=Hello%20Maw,"
+                        class="btn-home1">
                         <i class="fa-solid fa-arrow-right"></i> Hire Me
                     </a>
 
@@ -918,9 +935,11 @@
 
                     <hr>
                     <p>
-                        I am an undergraduate student with an academic focus on logistics and a growing interest in front-end development.
-I build structured and user-focused web experiences using HTML, CSS, and Java Script while exploring UI/UX design
-and digital illustration as complementary skills.
+                        I am an undergraduate student with an academic focus on logistics and a growing interest in
+                        front-end development.
+                        I build structured and user-focused web experiences using HTML, CSS, and Java Script while
+                        exploring UI/UX design
+                        and digital illustration as complementary skills.
                     </p>
                 </div>
 
@@ -1315,19 +1334,6 @@ and digital illustration as complementary skills.
     </footer>
 
 
-
-
-
-
-
 </body>
 
 </html>
-
-
-
-
-
-
-
-
